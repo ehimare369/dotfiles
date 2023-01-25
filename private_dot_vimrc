@@ -1,0 +1,45 @@
+vim9script
+
+syntax on
+set wildmenu	# command line completion
+set showcmd		# Show partial commands in last line
+set hidden		# Show hidden
+set hlsearch	# Highlight searches
+set ignorecase	#Use case insensitive search
+set smartcase
+set backspace=indent,eol,start
+set nostartofline
+set ruler
+set laststatus=2
+set visualbell
+set cmdheight=2
+set number
+set notimeout ttimeout ttimeoutlen=200
+set shiftwidth=4
+set tabstop=4
+filetype indent on
+colorscheme murphy
+
+
+
+
+
+### Enable spell checking for MarkDown files
+augroup filetype_docs
+  autocmd!
+  autocmd FileType markdown setlocal spell
+augroup END
+
+
+### Plugins
+plug#begin()
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+Plug 'mattn/emmet-vim'
+Plug ' airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'pope/vim-surround'
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
+plug#end()
+
